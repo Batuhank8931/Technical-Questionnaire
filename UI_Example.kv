@@ -4,7 +4,9 @@
 #:import Window kivy.core.window.Window
 
 MainWidget:
-<MainWidget>:
+
+
+<MainWidget>: 
     orientation:"vertical"
     canvas.before:
         Color:
@@ -17,8 +19,16 @@ MainWidget:
         canvas.before:
             Color:
                 rgba: (1,1,1,1)
-    TopBar:
+
+ #---------------The top bar which includes new user, hide disabled user and save user:-----------------------------------------------------------------------------------------
+
+
+    TopBar:       
         id:TopBar
+
+
+#--------------------------------------------------------------------------------------------------------
+
     BoxLayout:
         size_hint:1,.02
         canvas.before:
@@ -52,9 +62,18 @@ MainWidget:
                     size_hint:1,.01
                 ListHeader:
                     size_hint:1,.1
+
+
+ #---------------The list area includes user lists:-----------------------------------------------------------------------------------------
+
+
                 ListArea:
                     UserLists:
                         id:userlists
+
+#--------------------------------------------------------------------------------------------------------
+
+
             BoxLayout:
                 size_hint:0.005,1
 
@@ -70,7 +89,7 @@ MainWidget:
             Color:
                 rgba: (1,1,1,1)
 
-<TopBar>:
+<TopBar>: #---------------The top bar which includes new user, hide disabled user and save use:-----------------------------------------------------------------------------------------
     size_hint:1,.1
     canvas.before:
         Color:
@@ -116,7 +135,7 @@ MainWidget:
         size_hint:.1,1 
 
  
-<ListArea>:
+<ListArea>:  #---------------The list area includes user lists:-----------------------------------------------------------------------------------------
     bar_color: (219/255,68/255,55/255,1)
     bar_width: 5
     color: .2,.2,0,1 
@@ -141,6 +160,8 @@ MainWidget:
     text_size:self.size
     halign: 'center'
     valign: "middle"
+
+#---------------The form window includes new user form, this window added if it is nessecary:-----------------------------------------------------------------------------------------
 
 <FormWindow>:
     size_hint:.7,1
@@ -268,6 +289,12 @@ MainWidget:
                     text:"Back"
         BoxLayout:
             size_hint:1,.12
+
+
+#--------------------------------------------------------------------------------------------------------
+
+
+
 
 <SideSpace>:
     size_hint:.05,1

@@ -115,14 +115,14 @@ class MainWidget(BoxLayout):
                 self.ids.downwindow.remove_widget(self.AddSpace)
                 self.AddSpace=SideSpace()
 
-                for x in LoadedData:
-                    idnumber=int(x)+1
+
 
                 if EnableHidden==False:
-
+                    idnumber=len(LoadedData)+1
                     self.refreshtable(idnumber,Username,Email,Enable)
-                
+                    
                 else:
+                    idnumber=len(LoadedData)+1
                     self.refreshtable(idnumber,Username,Email,"-")
 
                 self.ids.TopBar.ids.NewUser.disabled = False
@@ -174,6 +174,8 @@ class MainWidget(BoxLayout):
         global EnableHidden
         self.ids.userlists.clear_widgets()
         if LoadedData1=={}:
+            file1 = open('data.json',"r",encoding='utf-8')
+            LoadedData = json.load(file1)
             LoadedData2=LoadedData
         else:
             LoadedData2=LoadedData1
